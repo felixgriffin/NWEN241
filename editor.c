@@ -76,14 +76,14 @@ int editor_delete_char(char editing_buffer[], int editing_buflen, char to_delete
   
 int editor_replace_str(char editing_buffer[], int editing_buflen, const char *str, const char *replacement, int offset){
   
-  int boolean = -2;
+  int boolean = 0;
   
   int stringlength = strlen(str);
   
   int replacementlength = strlen (replacement);
     
     int jj;
-  
+
   if (stringlength == 0 || offset < 0 || offset > editing_buflen - 1){
     
     return -1;
@@ -114,7 +114,7 @@ int editor_replace_str(char editing_buffer[], int editing_buflen, const char *st
             
             boolean = 1;
               
-            int jj = j;
+            jj = j;
               
               break;
             
@@ -145,5 +145,7 @@ int editor_replace_str(char editing_buffer[], int editing_buflen, const char *st
         return 0;
         
     }
+    
+    return 0;
     
 }
